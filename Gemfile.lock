@@ -48,6 +48,7 @@ GEM
 PLATFORMS
   -darwin-20
   arm64-darwin-20
+  arm64-darwin-22
 
 DEPENDENCIES
   activesupport (~> 5.0)
@@ -61,4 +62,4 @@ DEPENDENCIES
   tty-prompt (~> 0.23)
 
 BUNDLED WITH
-   2.2.27
+   2.4.18
