@@ -22,7 +22,7 @@ module Start
       end
 
       def self.create_pull_request
-        Command.run "gh pr create --fill --draft --template pull_request_template.md"
+        Command.run "gh pr create --fill --draft --template PULL_REQUEST_TEMPLATE.md"
       end
     end
   end
