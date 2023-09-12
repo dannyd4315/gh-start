@@ -27,7 +27,7 @@ module Start
       attr_reader :input
 
       def checkout_branch
-        Command.run "git checkout #{branch_name} >/dev/null 2>&1 || git checkout -b #{branch_name}", title: "Checking out new branch"
+        Command.run "git checkout -b #{branch_name}", title: "Checking out new branch"
       end
 
       def create_empty_commit
@@ -39,7 +39,7 @@ module Start
       end
 
       def create_pull_request
-        Github::Api.create_pull_request
+        Github::Api.create_pull_request(branch_name)
         Command.title "Created PR, run `gh pr view --web` to view."
       end
 
