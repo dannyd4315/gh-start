@@ -21,8 +21,8 @@ module Start
         Command.run "gh issue edit #{number} --add-assignee \"@me\" --repo #{owner}/#{name}"
       end
 
-      def self.create_pull_request
-        Command.run "gh pr create --fill --draft -T \"pull_request_template.md\""
+      def self.create_pull_request(branch_name)
+        Command.run "gh pr create --title '#{branch_name}' --draft --template \"pull_request_template.md\""
       end
     end
   end
