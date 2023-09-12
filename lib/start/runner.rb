@@ -27,11 +27,11 @@ module Start
       attr_reader :input
 
       def checkout_branch
-        Command.run "git checkout -b #{branch_name}", title: "Checking out new branch"
+        Command.run "OVERCOMMIT_DISABLE=1 git checkout -b #{branch_name}", title: "Checking out new branch"
       end
 
       def create_empty_commit
-        Command.run "git commit --allow-empty -m#{commit_message}", title: "Creating initial commit"
+        Command.run "OVERCOMMIT_DISABLE=1 git commit --allow-empty -m#{commit_message}", title: "Creating initial commit"
       end
 
       def push_branch
