@@ -35,7 +35,7 @@ module Start
       end
 
       def push_branch
-        Command.run "git push origin #{branch_name} -u", title: "Pushing to origin"
+        Command.run "OVERCOMMIT_DISABLE=1 git push origin #{branch_name} -u", title: "Pushing to origin"
       end
 
       def create_pull_request
